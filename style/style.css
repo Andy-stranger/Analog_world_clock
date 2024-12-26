@@ -1,0 +1,895 @@
+.parent{
+    position: fixed;
+    background-color: #d7f0ff;
+    display: flex;
+    box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(126 124 124), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 35rem;
+    width: 76rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    padding-left: 2.1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.parent::-webkit-scrollbar { 
+    display: none;
+}
+.dial {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: -41px;
+    left: 63px;
+    background: transparent;
+}
+.watch{
+    position: relative;
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    margin-top: 47px;
+    border-radius: 50%;
+}
+.watch:before{
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 115%;
+    left: 0;
+    text-align: center;
+    color: #000;
+}
+.clockFace{
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    top: -56px;
+    left: 47px;
+}
+.lines{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    transition: height 1s ease-in-out, width 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
+}
+.linesHide{
+    top: 50px;
+    left: 50px;
+    height: 0%;
+    width: 0%;
+}
+.darkLines{
+    background-color: black !important;
+}
+.line {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.line:before,
+.line:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 8px;
+    background-color: #0000ff;
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.line:after {
+    bottom: 2px;
+    top: auto;
+}
+.darkLine:before,
+.darkLine:after{
+    background-color: rgb(0, 255, 0);
+}
+.line:nth-child(1) {
+    transform: rotate(6deg);
+}
+.line:nth-child(2) {
+    transform: rotate(12deg);
+}
+.line:nth-child(3) {
+    transform: rotate(18deg);
+}
+.line:nth-child(4) {
+    transform: rotate(24deg);
+}
+.line:nth-child(5) {
+    transform: rotate(30deg);
+}
+.line:nth-child(6) {
+    transform: rotate(36deg);
+}
+.line:nth-child(7) {
+    transform: rotate(42deg);
+}
+.line:nth-child(8) {
+    transform: rotate(48deg);
+}
+.line:nth-child(9) {
+    transform: rotate(54deg);
+}
+.line:nth-child(10) {
+    transform: rotate(60deg);
+} 
+.line:nth-child(11) {
+    transform: rotate(66deg);
+}
+.line:nth-child(12) {
+    transform: rotate(72deg);
+}
+.line:nth-child(13) {
+    transform: rotate(78deg);
+}
+.line:nth-child(14) {
+    transform: rotate(84deg);
+}
+.line:nth-child(15) {
+    transform: rotate(90deg);
+}
+.line:nth-child(16) {
+    transform: rotate(96deg);
+}
+.line:nth-child(17) {
+    transform: rotate(102deg);
+}
+.line:nth-child(18) {
+    transform: rotate(108deg);
+}
+.line:nth-child(19) {
+    transform: rotate(114deg);
+}
+.line:nth-child(20) {
+    transform: rotate(120deg);
+}
+.line:nth-child(21) {
+    transform: rotate(126deg);
+}
+.line:nth-child(22) {
+    transform: rotate(132deg);
+}
+.line:nth-child(23) {
+    transform: rotate(138deg);
+}
+.line:nth-child(24) {
+    transform: rotate(144deg);
+}
+.line:nth-child(25) {
+    transform: rotate(150deg);
+}
+.line:nth-child(26) {
+    transform: rotate(156deg);
+}
+.line:nth-child(27) {
+    transform: rotate(162deg);
+}
+.line:nth-child(28) {
+    transform: rotate(168deg);
+}
+.line:nth-child(29) {
+    transform: rotate(174deg);
+}
+.line:nth-child(30) {
+    transform: rotate(180deg);
+}
+
+.line:nth-child(5):before,
+.line:nth-child(5):after,
+.line:nth-child(10):before,
+.line:nth-child(10):after,
+.line:nth-child(15):before,
+.line:nth-child(15):after,
+.line:nth-child(20):before,
+.line:nth-child(20):after,
+.line:nth-child(25):before,
+.line:nth-child(25):after,
+.line:nth-child(30):before,
+.line:nth-child(30):after {
+    width: 4px;
+    height: 5px;
+}
+.twelve,
+.twentyFour {
+      border-radius: 50%;
+      position: absolute;
+      text-align: center;
+      font-family: math;
+}
+.twelve {
+      width: 180px;
+      height: 180px;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+      background-color: #ffffff;
+      box-shadow: inset 3px 3px 5px rgba(0,0,0,.05);
+}
+.darkTwelve{
+    background-color: black !important;
+    color: white;
+}
+.twentyFour {
+      width: 130px;
+      height: 130px;
+      top: 35px;
+      left: 35px;
+      font-size: 12px;
+      color: red;
+}  
+.number {
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.number:nth-child(1) {
+    transform: rotate(30deg);
+}
+.number:nth-child(2) {
+    transform: rotate(60deg);
+}
+.number:nth-child(3) {
+    transform: rotate(90deg);
+}
+.number:nth-child(4) {
+    transform: rotate(120deg);
+}
+.number:nth-child(5) {
+    transform: rotate(150deg);
+}
+.number:nth-child(6) {
+    transform: rotate(180deg);
+}
+.number:nth-child(7) {
+    transform: rotate(210deg);
+}
+.number:nth-child(8) {
+    transform: rotate(240deg);
+}
+.number:nth-child(9) {
+    transform: rotate(270deg);
+}
+.number:nth-child(10) {
+    transform: rotate(300deg);
+}
+.number:nth-child(11) {
+    transform: rotate(330deg);
+}
+.number:nth-child(12) {
+    transform: rotate(360deg);
+}
+.number:nth-child(1) span {
+    display: inline-block;
+    transform: rotate(-30deg);
+}
+.number:nth-child(2) span {
+    display: inline-block;
+    transform: rotate(-60deg);
+}
+.number:nth-child(3) span {
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+.number:nth-child(4) span {
+    display: inline-block;
+    transform: rotate(-120deg);
+}
+.number:nth-child(5) span {
+    display: inline-block;
+    transform: rotate(-150deg);
+}
+.number:nth-child(6) span {
+    display: inline-block;
+    transform: rotate(-180deg);
+}
+.number:nth-child(7) span {
+    display: inline-block;
+    transform: rotate(-210deg);
+}
+.number:nth-child(8) span {
+    display: inline-block;
+    transform: rotate(-240deg);
+}
+.number:nth-child(9) span {
+    display: inline-block;
+    transform: rotate(-270deg);
+}
+.number:nth-child(10) span {
+    display: inline-block;
+    transform: rotate(-300deg);
+}
+.number:nth-child(11) span {
+    display: inline-block;
+    transform: rotate(-330deg);
+}
+.number:nth-child(12) span {
+    display: inline-block;
+    transform: rotate(-360deg);
+}
+.hours,
+.minutes,
+.seconds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation-name: time;
+      animation-iteration-count: infinite;
+}
+.hours .current,
+.minutes .current,
+.seconds .current {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 1.5s ease;
+}
+.hours {
+    animation-duration: 43200s; 
+}
+.minutes {
+    animation-duration: 3600s;
+}
+.seconds {
+    animation-duration: 60s;
+}
+.watch:before {
+    content: '';
+}
+.watch .hours {
+    animation-timing-function: linear;
+}
+.watch .minutes {
+    animation-timing-function: linear;
+}
+.watch .seconds {
+    animation-timing-function: linear;
+}
+.hand {
+    width: 4px;
+    height: 60px;
+    border-radius: 100px;
+    background: #000;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: 50% 100%;
+    box-shadow: 1px 0 3px rgba(0,0,0,.24);
+}
+.darkHand{
+    background: #ffffff;
+}
+.hand:before {
+    width: 15px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 3px rgba(0,0,0,.24);
+}
+.minutes .hand:after,
+.hours .hand:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60%;
+      position: absolute;
+      z-index: 10;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+.minutes .hand {
+    height: 85px;
+}
+.seconds .hand {
+    height: 85px;
+    width: 1px;
+    background: #ff0000;
+    transition: opacity 1s ease-in-out, height 1s ease-in-out;
+}
+.secondHandHide{
+    opacity: 0;
+    height: 0;
+}
+.seconds .hand:before {
+    background: #ff0000;
+    width: 8px;
+    height: 8px;
+}
+.seconds .hand:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 1px;
+    border-width: 0 1px 30px;
+    border-style: solid;
+    border-color: transparent transparent #ff0000;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@keyframes time {
+    100% { transform: rotate(360deg); }
+}
+.alarm{
+    margin: auto;
+    text-align: center;
+}
+.timer{
+    margin: auto;
+    text-align: center;
+}
+.defaultAlarmDiv{
+    text-align: center;
+    font-family: math;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.digitalDisplay{
+    position: absolute;
+    border: 2px solid black;
+    top: 34%;
+    left: 7%;
+    height: fit-content;
+    width: fit-content;
+    background-color: white;
+    color: black;
+    z-index: 0;
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.setAlarmBtn{
+    font-family: math;
+    font-weight: bolder;
+    margin-left: 1rem;
+}
+.setAlarmBtn:hover{
+    color: rgb(181, 0, 0);
+    cursor: pointer;
+}
+.optionDropDownContent{
+    display: none;
+    position: absolute;
+    background-color: rgb(148, 148, 147);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 0.5rem;
+    margin-top: -0.1rem;
+}
+.optionDropDownContent:hover, .weatherDropDownContent:hover{
+    display: block;
+}
+.optionDropDownContent a, .weatherDropDownContent a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.optionDropDownContent a:hover, .weatherDropDownContent a:hover{
+    background-color: #ddd;
+}
+.clockOptionIcon{
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+    transform: scale(1.3);
+}
+.clockOptionIcon:hover{
+    color: white;
+    cursor: pointer;
+    transform: scale(1.5) rotate(90deg);
+}
+.clockOptionIcon {
+    transition: transform 0.2s ease 0s;
+}
+.weatherDropDownContent{
+    display: none;
+    position: absolute;
+    background-color: rgb(148, 148, 147);
+    min-width: 160px;
+    max-height: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 6rem;
+    margin-top: -9rem;
+    font-family: math;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.weatherDropDownContent::-webkit-scrollbar { 
+    display: none;
+}
+.weatherDivision{
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.3rem;
+    background-color: transparent;
+    color: black;
+    font-family: math;
+    font-weight: bolder;
+    font-size: 1rem;
+    border-radius: 25%;
+}
+.weatherDivision:hover{
+    color: rgb(154, 154, 154);
+    cursor: pointer;
+}
+.addClockParentDiv{
+    position: fixed;
+    top: 9px;
+    right: 9px;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+.addClock{
+    border: 2px solid black;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    float: right;
+    text-align: center;
+    background-color: #132743;
+}
+.addClock:hover{
+    cursor: pointer;
+}
+.dropdownForAdd{
+    display: none;
+    position: absolute;
+    background-color: #c2e0f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 2.3rem;
+    left: -9rem;
+    text-align: left;
+}
+.dropdownForAdd a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: math;
+    z-index: 1;
+}
+.dropdownForAdd a:hover{
+    background-color: #9ad0fc;
+}
+.addIcon{
+    color: #9bcef8;
+    transform: scale(1.5);
+    margin-top: 0.5rem;
+    margin-left: 0.1rem;
+}
+.addIcon:hover{
+    cursor: pointer;
+    transform: scale(1.7);
+    color: #b6dbfa;
+}
+.addClockSpan, .addAlarmSpan, .cancel{
+    display: inline-block;
+    margin-right: 2rem;
+}
+.addClockSpan:hover, .addAlarmSpan:hover, .cancel:hover{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.buttonDiv {
+    text-align: center;
+    font-family: math;
+    font-weight: bolder;
+}
+.container{
+    position: relative;
+    height:27rem;
+    width: 24rem;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-color: #407088;
+    z-index: 0;
+    border-radius: 6px;
+}
+.partlySunny{
+    background-image: url("../images/partlySunny.jpg");
+    background-repeat: repeat;
+    background-size: cover; /*white*/
+}
+.verySunny{
+    background-image: url("../images/verySunny2.jpg");
+    background-repeat: repeat;
+    background-size: cover;/*white*/
+}
+.partlyRainy{
+    background-image: url("../images/partlyRainy2.jpg");
+    background-repeat: repeat;
+    background-size: cover;/*white*/
+}
+.veryRainy{
+    background-image: url("../images/heavyRain.jpg");
+    background-repeat: repeat;
+    background-size: cover;/*white*/
+}
+.partlyCold{
+    background-image: url("../images/partlyCold.jpg");
+    background-repeat: repeat;
+    background-size: cover;/*white*/
+}
+.veryCold{
+    background-image: url("../images/heavyCold2.jpg");
+    background-repeat: repeat;
+    background-size: cover;/*black*/
+}
+.digitalTimeDiv{
+    border: 2px solid black;
+    background-color: white;
+    margin: auto;
+    height: 2rem;
+    width: 18rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: math;
+    font-weight: bolder;
+    margin-top: -3rem;
+    margin-bottom: 0.5rem;
+}
+.digitalTimeDivDark, .darkTimerDisplay, .darkAlarmTimerDiv{
+    background-color: rgb(0, 0, 0) !important;
+    color: red;
+}
+.whiteColor{
+    color: white;
+}
+.blackColor{
+    color: black;
+}
+.zoneDisplay{
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0;
+    font-family: math;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+.alarmRingingInSpan {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-family: math;
+}
+.snoozeBtnUnactive{
+    margin-right: 2rem;
+    color: #303030;
+}
+.dismissBtnUnactive{
+    color: #303030;
+}
+.snoozeBtnActive, .dismissBtnActive{
+    color: black;
+}
+.snoozeBtnActive:hover, .dismissBtnActive:hover{
+    cursor: pointer;
+    color: white;
+}
+.snoozeDiv{
+    text-align: center;
+    font-family: math;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.snoozeOptionsDiv{
+    display: none;
+    position: absolute;
+    background-color: rgb(148, 148, 147);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.snoozeOptionsDiv a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: math;
+}
+.snoozeOptionsDiv a:hover{
+    background-color: #ddd;
+}
+.clockCloseBtn{
+    float: right;
+    margin-top: -1.3rem;
+    margin-right: 0.2rem;
+    transform: scale(1.2);
+    transition: 0.2s ease 0s;
+}
+.clockCloseBtn:hover{
+    color: white;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+.clockHeading{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: math;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+.show{
+    display: block !important;
+}
+.hide{
+    display: none !important;
+}
+.timerDisplay{
+    border: 2px solid black;
+    height: 5rem;
+    width: 18rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-family: monospace;
+    background-color: white;
+}
+.alarmCountDownDiv{
+    display: none;
+}
+.alarmTimerDiv{
+    border: 2px solid black;
+    height: 5rem;
+    width: 18rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-family: monospace;
+    background-color: white;
+}
+.timerStartBtn, .timerStopBtn, .timerResetBtn{
+    text-align: center;
+    margin-right: 2rem;
+    font-family: math;
+    font-weight: bolder;
+}
+.timerStartBtn{
+    margin-left: 2rem;
+}
+.timerStartBtn:hover{
+    cursor: pointer;
+    color: rgb(0, 255, 0);
+}
+.timerStopBtn:hover{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+}
+.timerResetBtn:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 255);
+}
+.modalClose{
+    float: right;
+    transform: scale(1.5);
+    position: relative;
+    top: 0%;
+    right: 0%;
+}
+.modalClose:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.zoneDiv, .formatDiv{
+    margin-bottom: 1rem;
+}
+.addClockModalParentDiv, .addAlarmModalParentDiv{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.7); 
+}
+.addClockModalContentDiv, .addAlarmModalContentDiv{
+    background-color: #407088;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid black;
+    width: 30rem;
+    height: fit-content;
+    border-radius: 25px;
+}
+.cancelAlarm {
+    margin-top: 1rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cancelAlarm:hover{
+    color: white;
+    cursor: pointer;
+}
+.currentWeatherSpan{
+    font-family: math;
+    font-weight: bolder;
+}
+.currentWeatherContent{
+    display: inline-block;
+    height: 1rem;
+    width: 13rem;
+    background-color: white;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-family: math;
+}
+.currentWeatherContent::-webkit-scrollbar { 
+    display: none;
+}
+.forecastWeatherSpan{
+    font-family: math;
+    font-weight: bolder;
+}
+.forecastWeatherContent{
+    display: inline-block;
+    height: 1rem;
+    width: 13rem;
+    background-color: white;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-family: math;
+}
+.forecastWeatherContent::-webkit-scrollbar { 
+    display: none;
+}
+.parentWeatherDiv{
+    float: right;
+    font-family: math;
+    font-weight: bolder;
+}
+.weatherHeading:hover{
+    color: rgb(154, 154, 154);
+    cursor: pointer;
+}
